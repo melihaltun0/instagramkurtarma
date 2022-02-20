@@ -1,0 +1,29 @@
+ int index;
+  for(index = 0x0; index < 0x7FFFFFFF; index++) {
+    seed = index;
+
+    gen_password(generated_pw);
+
+    if(!memcmp(generated_pw, desired, 12)) {
+      printf("Found it! Seed = %d\n", index);
+      gen_password(generated_pw);
+      printf("Next password: \n");
+      print_hex(generated_pw);
+      printf("\n");
+      exit(0);
+    }
+  } int index;
+  for(index = 0x0; index < 0x7FFFFFFF; index++) {
+    seed = index;
+
+    gen_password(generated_pw);
+
+    if(!memcmp(generated_pw, desired, 12)) {
+      printf("Found it! Seed = %d\n", index);
+      gen_password(generated_pw);
+      printf("Next password: \n");
+      print_hex(generated_pw);
+      printf("\n");
+      exit(0);
+    }
+  }
