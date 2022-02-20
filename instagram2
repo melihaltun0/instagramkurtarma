@@ -1,0 +1,21 @@
+int seed = 0;
+
+int my_rand() {
+  seed = (214013 * seed + 2531011) & 0x7fffffff;
+  return seed >> 16;
+}
+
+void gen_password(uint8_t buffer[12]) {
+  uint32_t i;
+
+  for(i = 0; i < 12; i++) {
+    buffer[i] = my_rand() % 0xFF;
+  }
+}
+
+void print_hex(uint8_t *hex) {
+  uint32_t i;
+  for(i = 0; i < 12; i++) {
+    printf("%02x", hex[i]);
+  }
+}
