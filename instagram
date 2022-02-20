@@ -1,0 +1,9 @@
+function msrand: cardinal
+const
+ a=214013
+ c=2531011
+ m=2147483648
+begin
+ x2 :=(a * x2 + c) mod m;
+ msrand := x2 div 65536;
+end;
